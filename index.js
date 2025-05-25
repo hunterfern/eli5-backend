@@ -56,6 +56,6 @@ const explanation = completion.choices[0].message.content;
   }
 });
 
-// Start the server on port 3000
+// Start the server 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`ELI5 backend running on port ${PORT}`));
