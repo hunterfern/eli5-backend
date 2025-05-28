@@ -25,13 +25,18 @@ app.post('/api/explain', async (req, res) => {
     }
 
     const prompt = `
-You are an AI that explains things like someone is five years old.
+You are an expert teacher who explains complex topics like someone is five years old.
 
-Break the following down into a short, simple explanation, followed by a glossary of any tricky words.
+Always include real details and facts, but explain them clearly and simply. Avoid being vague.
 
-Text:
-"""${text}"""
+Then include a glossary of tricky words.
+
+The user asked:
+"""
+${text}
+"""
 `;
+
 
     const completion = await openai.chat.completions.create({
       model: 'gpt-3.5-turbo',
